@@ -17,6 +17,10 @@ public class Book {
 		this.wydawnictwo = wydawnictwo;
 		this.isbn = isbn;
 	}
+	
+	Book(Book book) {
+		this(book.tytul,book.autor,book.rokWydania,book.iloscStron,book.wydawnictwo,book.isbn);
+	}
 
 	void printInfo() {
 		System.out.println(
