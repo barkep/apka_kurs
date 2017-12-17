@@ -8,22 +8,22 @@ public class Book {
 	private int iloscStron;
 	private String wydawnictwo;
 	private String isbn;
-	
+
 	public Book(String tytul, String autor, int rokWydania, int iloscStron, String wydawnictwo, String isbn) {
-		this.tytul=tytul;
-		this.autor=autor;
-		this.rokWydania=rokWydania;
-		this.iloscStron=iloscStron;
-		this.wydawnictwo=wydawnictwo;
-		this.isbn=isbn;
+		this.tytul = tytul;
+		this.autor = autor;
+		this.rokWydania = rokWydania;
+		this.iloscStron = iloscStron;
+		this.wydawnictwo = wydawnictwo;
+		this.isbn = isbn;
 	}
-	
+
 	public Book(Book book) {
-		this(book.tytul,book.autor,book.rokWydania,book.iloscStron,book.wydawnictwo,book.isbn);
+		this(book.tytul, book.autor, book.rokWydania, book.iloscStron, book.wydawnictwo, book.isbn);
 	}
-	
-	//gettery i settery
-	
+
+	// gettery i settery
+
 	public String getTytul() {
 		return tytul;
 	}
@@ -71,8 +71,7 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	
-	
+
 	public void printInfo() {
 		System.out.println(
 				tytul + "; " + autor + "; " + rokWydania + "; " + iloscStron + "; " + wydawnictwo + "; " + isbn);
