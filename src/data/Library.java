@@ -4,12 +4,13 @@ import utils.DataReader;
 
 public class Library {
 
-	private final int MAX_VALUE = 1000;
+	public static final int MAX_BOOK = 1000;
+	
 	private Book[] books;
 	private int bookNumber;
 
 	public Library() {
-		books = new Book[MAX_VALUE];
+		books = new Book[MAX_BOOK];
 	}
 
 	public Book[] getBooks() {
@@ -23,7 +24,7 @@ public class Library {
 	public void addBook() {
 		DataReader dataReader = new DataReader();
 		Book book = dataReader.ReadAndCreateBook();
-		if (bookNumber < MAX_VALUE) {
+		if (bookNumber < MAX_BOOK) {
 			books[bookNumber] = book;
 			bookNumber++;
 		} else {

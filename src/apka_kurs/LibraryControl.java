@@ -2,9 +2,7 @@ package apka_kurs;
 
 import java.util.Scanner;
 
-import data.Book;
 import data.Library;
-import utils.DataReader;
 
 public class LibraryControl {
 
