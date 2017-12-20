@@ -2,7 +2,7 @@ package apka_kurs;
 
 public class LibraryApp {
 	
-	final static String APP_NAME = "Biblioteka v0.8";
+	final static String APP_NAME = "Biblioteka v0.9";
 
 	public static void main(String[] args) {
 
