@@ -6,18 +6,17 @@ public class Library {
 
 	public static final int MAX_BOOK = 1000;
 	public static final int MAX_MAGAZINE = 1000;
-	
+
 	private Book[] books;
 	private int bookNumber;
-	
+
 	private Magazine[] magazines;
 	private int magazineNumber;
 
 	public Library() {
 		books = new Book[MAX_BOOK];
-		magazines = new  Magazine[MAX_MAGAZINE];
+		magazines = new Magazine[MAX_MAGAZINE];
 	}
-
 
 	public void addBook() {
 		DataReader dataReader = new DataReader();
@@ -29,12 +28,12 @@ public class Library {
 			System.out.println("Biblioteka pe³na");
 		}
 	}
-	
+
 	public void addMagazine() {
 		DataReader dataReader = new DataReader();
 		Magazine magazine = dataReader.readAndCreateMagazine();
 		if (magazineNumber < MAX_MAGAZINE) {
-			magazines[magazineNumber]=magazine;
+			magazines[magazineNumber] = magazine;
 			magazineNumber++;
 		} else {
 			System.out.println("Biblioteka pe³na");
@@ -47,7 +46,7 @@ public class Library {
 		} else {
 			System.out.println("Ksi¹¿ki w bibliotece: ");
 			for (int i = 0; i < bookNumber; i++) {
-				books[i].printInfo();
+				System.out.println(books[i]);
 			}
 		}
 	}
@@ -58,13 +57,13 @@ public class Library {
 		} else {
 			System.out.println("Magazyny w bibliotece: ");
 			for (int i = 0; i < magazineNumber; i++) {
-				magazines[i].printInfo();
+				System.out.println(magazines[i]);
 			}
 		}
 	}
 
-	//gettery
-	
+	// gettery
+
 	public Book[] getBooks() {
 		return books;
 	}
@@ -72,7 +71,7 @@ public class Library {
 	public int getBookNumber() {
 		return bookNumber;
 	}
-	
+
 	public Magazine[] getMagazines() {
 		return magazines;
 	}
@@ -80,5 +79,5 @@ public class Library {
 	public int getMagazineNumber() {
 		return magazineNumber;
 	}
-	
+
 }
