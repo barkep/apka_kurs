@@ -54,4 +54,8 @@ public class DataReader {
 		return new Magazine(tytul, rokWydania, wydawnictwo, day, month, language);
 	}
 
+	public int getInt() {
+		return scanner.nextInt();
+	}
+
 }
