@@ -39,8 +39,20 @@ public class Book extends Publication {
 
 	@Override
 	public String toString() {
-		return getTytul() + "; " + getAutor() + "; " + getRokWydania() + "; " + getIloscStron() + "; "
-				+ getWydawnictwo() + "; " + getIsbn();
+		StringBuilder result = new StringBuilder();
+		result.append(getTytul());
+		result.append(";");
+		result.append(getAutor());
+		result.append(";");
+		result.append(getRokWydania());
+		result.append(";");
+		result.append(getIloscStron());
+		result.append(";");
+		result.append(getWydawnictwo());
+		result.append(";");
+		result.append(getIsbn());
+		result.append(";");
+		return result.toString();
 	}
 
 	@Override

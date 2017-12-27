@@ -39,8 +39,20 @@ public class Magazine extends Publication {
 
 	@Override
 	public String toString() {
-		return getTytul() + "; " + getWydawnictwo() + "; " + getRokWydania() + "-" + getMonth() + "-" + getDay() + "; "
-				+ getLanguage();
+		StringBuilder result = new StringBuilder();
+		result.append(getTytul());
+		result.append(";");
+		result.append(getWydawnictwo());
+		result.append(";");
+		result.append(getRokWydania());
+		result.append("-");
+		result.append(getMonth());
+		result.append("-");
+		result.append(getDay());
+		result.append(";");
+		result.append(getLanguage());
+		result.append(";");
+		return result.toString();
 	}
 
 	@Override
