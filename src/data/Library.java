@@ -4,80 +4,79 @@ import utils.DataReader;
 
 public class Library {
 
-	public static final int MAX_BOOK = 1000;
-	public static final int MAX_MAGAZINE = 1000;
+	public static final int MAX_PUBLICATIONS = 1000;
 
-	private Book[] books;
-	private int bookNumber;
-
-	private Magazine[] magazines;
-	private int magazineNumber;
+	private Publication[] publications;
+	private int publicationsNumber = 0;
 
 	public Library() {
-		books = new Book[MAX_BOOK];
-		magazines = new Magazine[MAX_MAGAZINE];
+		publications = new Publication[MAX_PUBLICATIONS];
 	}
 
 	public void addBook() {
 		DataReader dataReader = new DataReader();
 		Book book = dataReader.readAndCreateBook();
-		if (bookNumber < MAX_BOOK) {
-			books[bookNumber] = book;
-			bookNumber++;
-		} else {
-			System.out.println("Biblioteka pe³na");
-		}
+		addPublication(book);
 	}
 
 	public void addMagazine() {
 		DataReader dataReader = new DataReader();
 		Magazine magazine = dataReader.readAndCreateMagazine();
-		if (magazineNumber < MAX_MAGAZINE) {
-			magazines[magazineNumber] = magazine;
-			magazineNumber++;
+		addPublication(magazine);
+	}
+
+	private void addPublication(Publication publication) {
+		if (publicationsNumber < MAX_PUBLICATIONS) {
+			publications[getPublicationsNumber()] = publication;
+			setPublicationsNumber(getPublicationsNumber() + 1);
 		} else {
-			System.out.println("Biblioteka pe³na");
+			System.out.println("Biblioteka jest pe³na");
 		}
 	}
 
 	public void printBooks() {
-		if (bookNumber == 0) {
-			System.out.println("Brak ksi¹¿ek w bibliotece");
-		} else {
-			System.out.println("Ksi¹¿ki w bibliotece: ");
-			for (int i = 0; i < bookNumber; i++) {
-				System.out.println(books[i]);
+		int countBooks = 0;
+		for (int i = 0; i < getPublicationsNumber(); i++) {
+			if (publications[i] instanceof Book) {
+				System.out.println(publications[i]);
+				countBooks++;
 			}
+		}
+		if (countBooks == 0) {
+			System.out.println("Brak ksi¹¿ek w bibliotece");
 		}
 	}
 
 	public void printMagazines() {
-		if (magazineNumber == 0) {
-			System.out.println("Brak magazynów w bibliotece");
-		} else {
-			System.out.println("Magazyny w bibliotece: ");
-			for (int i = 0; i < magazineNumber; i++) {
-				System.out.println(magazines[i]);
+		int countMagazines = 0;
+		for (int i = 0; i < getPublicationsNumber(); i++) {
+			if (publications[i] instanceof Magazine) {
+				System.out.println(publications[i]);
+				countMagazines++;
 			}
 		}
+		if (countMagazines == 0) {
+			System.out.println("Brak magazynów w bibliotece");
+		}
+
 	}
 
 	// gettery
 
-	public Book[] getBooks() {
-		return books;
+	public int getPublicationsNumber() {
+		return publicationsNumber;
 	}
 
-	public int getBookNumber() {
-		return bookNumber;
+	public void setPublicationsNumber(int publicationsNumber) {
+		this.publicationsNumber = publicationsNumber;
 	}
 
-	public Magazine[] getMagazines() {
-		return magazines;
+	public Publication[] getPublications() {
+		return publications;
 	}
 
-	public int getMagazineNumber() {
-		return magazineNumber;
+	public void setPublications(Publication[] publications) {
+		this.publications = publications;
 	}
 
 }
