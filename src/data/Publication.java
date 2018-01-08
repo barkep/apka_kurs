@@ -30,8 +30,8 @@ public class Publication {
 		this.wydawnictwo = wydawnictwo;
 	}
 
-	Publication(String tytu³, int rokWydania, String wydawnictwo) {
-		setTytul(tytu³);
+	Publication(String tytul, int rokWydania, String wydawnictwo) {
+		setTytul(tytul);
 		setRokWydania(rokWydania);
 		setWydawnictwo(wydawnictwo);
 	}

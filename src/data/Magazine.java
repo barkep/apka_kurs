@@ -30,8 +30,8 @@ public class Magazine extends Publication {
 		this.language = language;
 	}
 
-	public Magazine(String tytu≥, int rokWydania, String wydawnictwo, int day, int month, String language) {
-		super(tytu≥, rokWydania, wydawnictwo);
+	public Magazine(String tytu≈Ç, int rokWydania, String wydawnictwo, int day, int month, String language) {
+		super(tytu≈Ç, rokWydania, wydawnictwo);
 		setDay(day);
 		setMonth(month);
 		setLanguage(language);
